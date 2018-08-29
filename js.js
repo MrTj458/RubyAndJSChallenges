@@ -34,4 +34,26 @@ function drawTree(height) {
   console.log();
 }
 
-drawTree(15);
+function print2DArrayAsGrid(array, seperator /* OPTIONAL */) {
+  // Check if a seperator was passed. Use default if not.
+  if (typeof(seperator) === 'undefined') {
+    seperator = ' ';
+  }
+
+  // Loop through rows
+  for(var r = 0; r < array.length; r++) {
+    // Loop through columns
+    for(var c = 0; c < array[r].length; c++) {
+      // Check if last index in row
+      if(c === array[r].length - 1) {
+        // Don't print a seperator if last index
+        process.stdout.write((array[r][c]).toString());
+      } else {
+        // Print a seperator if not last index
+        process.stdout.write((array[r][c]).toString() + seperator);
+      }
+    }
+    // Newline
+    console.log();
+  }
+}
