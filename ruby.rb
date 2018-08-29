@@ -1,6 +1,4 @@
-require 'pry'
-
-def draw_tree(height)
+def draw_slant(height)
   height.times do |i|
     (i + 1).times do |j|
       print '*'
@@ -14,7 +12,7 @@ def string_to_word_array(string)
 end
 
 def string_to_char_array(string, keep_spaces = false)
-  string = string.gsub(/\s+/, "") if !keep_spaces
+  string = string.gsub(/\s+/, '') if !keep_spaces
   string = string.split('')
 end
 
@@ -32,20 +30,20 @@ def case_swap(string)
   string_array.join()
 end
 
-def array_filled(num, value)
+def array_filled(amount, value)
   array = []
 
-  num.times do |i|
+  amount.times do |i|
     array << value
   end
 
   array
 end
 
-def swap(array, pos1, pos2)
+def swap(array, index1, index2)
   new_array = array
-  temp = new_array[pos1]
-  new_array[pos1] = new_array[pos2]
-  new_array[pos2] = temp
+  temp = new_array[index1]
+  new_array[index1] = new_array[index2]
+  new_array[index2] = temp
   new_array
 end
