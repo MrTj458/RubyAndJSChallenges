@@ -28,7 +28,7 @@ def case_swap(string)
       string_array[i].upcase!
     end
   end
-  
+
   string_array.join()
 end
 
@@ -42,5 +42,10 @@ def array_filled(num, value)
   array
 end
 
-x = array_filled(10, 5)
-binding.pry
+def swap(array, pos1, pos2)
+  new_array = array
+  temp = new_array[pos1]
+  new_array[pos1] = new_array[pos2]
+  new_array[pos2] = temp
+  new_array
+end
